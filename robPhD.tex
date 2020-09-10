@@ -1,0 +1,203 @@
+\documentclass[12pt,twoside,openright,british]{scrreprt}
+
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% LYX PART
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Swis721 Cn BT}
+\setsansfont[Ligatures=TeX]{Swis721 Cn BT}
+\setmonofont{Swis721 Cn BT}
+\usepackage[paperwidth=17cm,paperheight=24cm]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2.5cm,lmargin=2cm,rmargin=1.2cm}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2} % profondità della Table of Contents
+\usepackage[italian, english]{babel}
+\usepackage{setspace}
+\usepackage[authoryear]{natbib} 
+\onehalfspacing
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{pdftitle={PhD thesis Roberto Gentile},
+ pdfauthor={Roberto Gentile},
+ pdfsubject={Simple Lateral Mechanism Analysis, SLaMA}}
+
+\makeatletter
+\@ifundefined{date}{}{\date{}}
+\makeatother
+% END OF LYX PART
+
+
+%%% ROB's PART
+\usepackage[utf8]{inputenc} 			% codifica che supporta le lettere accentate
+\bibliographystyle{agsm} 				% HARVARD BIBLIOGRAPHY
+\usepackage{booktabs} 				% per tabelle
+\usepackage{multirow}				% celle unite nelle tabelle
+\usepackage{paracol} 				% pagine con doppia colonna
+\usepackage{float}					% per i float
+\usepackage{placeins} 				% per i float
+\usepackage{appendix}
+\usepackage{amsmath}				% breaks equations in multiple lines
+\globalcounter{equation} 				% evitare doppia numerazione delle equazioni per colpa di paracol
+\usepackage{array}
+\usepackage{lscape} 				% pagina in orizzontale
+\usepackage{graphicx}				% scalare le tabelle
+\usepackage{rotating} 				% ruotare figure
+\usepackage{wrapfig} 				% ruotare le figure
+\usepackage{afterpage} 				% mettere figure solo nella pagina sinistra/destra
+\usepackage{threeparttable} 			% footnotes sotto le tabelle 
+\usepackage[font=footnotesize]{caption} 	% fontSize for captions (if normal is 12, footnotesize is 10)
+\usepackage{pdfpages}				% insert external pdfs (e.g. the cover page)
+
+\usepackage{fancyhdr}				% headers with Chapter name etc
+\renewcommand*\chapterpagestyle{empty}
+
+\usepackage{titlesec}	% sections and subsections (if normal is 12, large is 14.4 pt: è il più vicino ai 14pt)richiesti)
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\titleformat*{\subsubsection}{\itshape} %per fare come dicono le norme redazionali impostare \large\bfseries per tutti e tre i livelli
+
+\usepackage{hyperref}	% links in the document & table of content in the PDF
+\hypersetup{
+    bookmarksdepth=4	% bookmarks bar up to the fourth level
+    unicode=false,          	% non-Latin characters in Acrobat?s bookmarks
+    pdftoolbar=true,        	% show Acrobat?s toolbar?
+    pdfmenubar=true,        	% show Acrobat?s menu?
+    pdffitwindow=false,     	% window fit to page when opened
+    pdfstartview={FitH},    	% fits the width of the page to the window
+    pdftitle={My title},    	% title
+    pdfauthor={Roberto Gentile},     		% author
+    pdfsubject={Simple Lateral Mechanism Analysis, SLaMA},   	% subject of the document
+    pdfcreator={Roberto Gentile},   		% creator of the document
+    pdfproducer={Roberto Gentile}, 		% producer of the document
+    pdfkeywords={keyword1, key2, key3}, 	% list of keywords
+    pdfnewwindow=true,   	% links in new PDF window
+    colorlinks=false,       	% false: boxed links; true: colored links
+    linkcolor=red,          	% color of internal links (change box color with linkbordercolor)
+    citecolor=green,        	% color of links to bibliography
+    filecolor=magenta,      	% color of file links
+    urlcolor=cyan           	% color of external links
+}
+
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+%%% END OF ROB's PART
+
+
+
+%%% DOCUMENT
+\begin{document}
+
+
+% COVER PAGE
+%headers settings
+\pagestyle{empty}
+\includepdf[pages={1}, pagecommand={}]{COVERpage/copertinaENG.pdf}
+\cleardoublepage
+\includepdf[pages={1}, pagecommand={}]{COVERpage/copertinaITA.pdf}
+
+
+% ABSTRACT
+\include{ABSTRACT/abstract}
+
+%\TableOfContents OLD
+\tableofcontents\label{toc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO]{Roberto Gentile}
+\fancyhead[LE]{\scriptsize \leftmark}
+\fancyfoot[LE,RO]{\thepage}
+%\fancyfoot[RE,LO]{\hyperref[toc]{\footnotesize Go to ToC}}
+
+
+%\NonNumChapter{\textit{Introduction}} OLD
+\chapter*{\textit{Introduction}}
+\label{chap:intro}
+\addcontentsline{toc}{chapter}{Introduction}
+\include{INTRO/intro}
+
+
+
+%\StartOfNumChapters
+
+% CHAPTER 1
+\setchapterpreamble{%
+    
+    \vspace{24pt}
+    
+    \textbf{{\Large Abstract}}
+        
+The assessment of the seismic performance of existing buildings is a complex process since, typically, those are not specifically designed to resist earthquakes. With respect to new structures, more advanced and detailed modelling, analysis and verification procedures are needed, since existing buildings are not specifically designed to exclude a priori the formation of unfavourable, local and global failure mechanisms, which may be difficult to analyse. In this Chapter, the assessment standards/guidelines applied in USA (ASCE 41-13), Europe (EuroCode 8, part 3) and New Zealand (NZSEE 2017) at the time of this thesis work are discussed and compared both in terms of basic principles and suggested analysis techniques.
+    
+    \vspace{24pt}
+    
+    \textbf{{\Large Contents}}
+    
+    \begin{itemize}
+    	\item Seismic assessment of existing buildings;
+    	\item Comparison of code-based approaches;
+    	\item EuroCode 8, part 3, ASCE 41-13, NZSEE 2017.
+    \end{itemize}
+}
+
+%\NumChapter{\textit{Seismic assessment of existing buildings: code-based approaches}}
+\chapter{\textit{Seismic assessment of existing buildings: code-based approaches}}
+\label{chap:assessment}
+\include{CHAP1/assessment}
+% CHAPTER 1
+
+
+% CONCLUSIONS
+%\NonNumChapter{\textit{Conclusions and future developments}}
+\chapter*{\textit{Conclusions and future developments}}
+\label{chap:conclusions}
+\addcontentsline{toc}{chapter}{Conclusions and future developments}
+\include{OUTRO/conclusions}
+
+
+%% NOTES
+%\NonNumChapter{Note}
+
+
+% REFERENCES
+%\NonNumChapter{\textit{References}}
+   
+    %\bibliographystyle{unsrtnat} 				%STILE DELLA BIBLIOGRAFIA (mettere plain o alpha)
+    %\setcitestyle{authoryear, open={},close={}}		%STILE DELLE CITAZIONI
+        
+%insert bibliography
+\renewcommand{\bibname}{References}	% name the bibliography section with "References"
+\bibliography{references.bib}
+\addcontentsline{toc}{chapter}{References} % appear in the table of contents
+
+\begin{appendices} % MARKER: this can be eliminated
+
+\chapter{Hierarchy of strength: step-by-step numerical example}
+\label{app:hierarchy}
+\include{appendixA/hierarchy}
+
+\end{appendices}
+
+%% ATTACHMENTS
+
+\setchapterpreamble{%
+    
+I would like to thank the eternal genius of prof Ulysses R. Garbaggio.
+
+}
+
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements} % appear in the table of contents
+
+\chapter*{Curriculum Vitae}
+\addcontentsline{toc}{chapter}{Curriculum Vitae} % appear in the table of contents
+
+\pagestyle{empty}
+\includepdf[pages={1}, pagecommand={}]{PhDcurriculum.pdf}
+
+
+
+\end{document}

@@ -1,0 +1,20 @@
+\babel@toc {english}{}
+\contentsline {chapter}{Introduction}{11}{chapter*.2}
+\contentsline {section}{Background}{12}{section*.3}
+\contentsline {section}{Research motivations}{12}{section*.3}
+\contentsline {section}{Hypothesis, objectives and scope}{12}{section*.3}
+\contentsline {section}{Research methodology and division of the work}{13}{section*.3}
+\contentsline {section}{Dissertation outline}{13}{section*.3}
+\contentsline {chapter}{\numberline {1}\textit {Seismic assessment of existing buildings: code-based approaches}}{15}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{16}{section.1.1}
+\contentsline {section}{\numberline {1.2}Basic principles of the considered codes}{17}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}ASCE 41- 13}{17}{subsection.1.2.1}
+\contentsline {chapter}{Conclusions and future developments}{19}{chapter*.6}
+\contentsline {section}{Summary}{20}{section*.7}
+\contentsline {section}{Key findings and contributions}{20}{section*.7}
+\contentsline {section}{Overall conclusion}{20}{section*.7}
+\contentsline {chapter}{References}{21}{chapter*.8}
+\contentsline {chapter}{\numberline {A}Hierarchy of strength: step-by-step numerical example}{23}{Appendix.1.A}
+\contentsline {section}{\numberline {A.1}Structural details of the subassembly}{24}{section.1.A.1}
+\contentsline {chapter}{Acknowledgements}{25}{chapter*.9}
+\contentsline {chapter}{Curriculum Vitae}{27}{chapter*.10}
